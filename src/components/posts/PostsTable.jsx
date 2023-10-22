@@ -25,10 +25,7 @@ const estilos = {
     textAlign: "center",
     marginTop: "-3%"
   },
-
-
 }
-
 
 function PostTable() {
 
@@ -56,20 +53,16 @@ function PostTable() {
               dataKey='id'
               className='datatable-responsive'
               scrollable scrollHeight="50px">
-
               <Column field="userId" sortable header="Usuario" rowEditor headerStyle={{ width: '10%', minWidth: '8rem' }}></Column>
               <Column field="descripcion" header="Descripcion" ></Column>
               <Column field="fecha" sortable header="Fecha"></Column>
               <Column field="ubicacion" sortable header="Ubicacion"></Column>
               <Column field="imagen" header="Imagen"></Column>
               <Column field="userId" header="Usuario asociado"></Column>
-                        </DataTable>
+            </DataTable>
           </div>
-          /</div>
-
+          </div>
       </>
-
-
     )
   }
 

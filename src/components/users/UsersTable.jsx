@@ -12,21 +12,19 @@ const estilos = {
     padding: "15px",
     fontFamily: "-apple-system",
     fontSize: "17px",
-  
+
     color: "black",
     backgroundColor: "#888BE3",
     height: "600px",
   },
-  tabla:{
-    textAlign:"center",
-    marginLeft:"5%",
+  tabla: {
+    textAlign: "center",
+    marginLeft: "5%",
   },
-  titulo:{
-   textAlign:"center",
-    marginTop:"-3%"
+  titulo: {
+    textAlign: "center",
+    marginTop: "-3%"
   },
-  
-
 }
 
 const deleteUserButton = (userid) => {
@@ -65,27 +63,24 @@ function UserTable() {
     return (
       <>
         <div style={estilos.total}>
-       
-         <div>
-         <Link to={`/newuser`} className='btn btn-info'>
-          <Button label="Agregar usuario"/>
-          </Link>
-          <h1 style={estilos.titulo}>Usuarios</h1>
-         </div>
-        
-
+          <div>
+            <Link to={`/newuser`} className='btn btn-info'>
+              <Button label="Agregar usuario" />
+            </Link>
+            <h1 style={estilos.titulo}>Usuarios</h1>
+          </div>
           <div style={estilos.tabla}>
             <DataTable value={users}
               dataKey='id'
               className='datatable-responsive'
-              scrollable scrollHeight="50px" style={{ minWidth: '50rem'}}>
-
+              scrollable scrollHeight="50px" style={{ minWidth: '50rem' }}>
+              <Column field="id" header="Usuario ID"></Column>
               <Column field="username" sortable header="Username" rowEditor headerStyle={{ width: '10%', minWidth: '8rem' }}></Column>
               <Column field="email" header="Email"></Column>
               <Column field="password" header="Password"></Column>
             </DataTable>
-          </div>     
-            </div>
+          </div>
+        </div>
 
       </>
     )
