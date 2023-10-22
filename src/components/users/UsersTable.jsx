@@ -4,11 +4,33 @@ import { useUsers } from '../../hooks/useUsers';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Link } from 'react-router-dom';
+import { Button } from 'primereact/button';
 
+const estilos = {
+  total: {
+    margin: "10px",
+    padding: "15px",
+    fontFamily: "-apple-system",
+    fontSize: "17px",
+  
+    color: "black",
+    backgroundColor: "#888BE3",
+    height: "600px",
+  },
+  tabla:{
+    textAlign:"center",
+    marginLeft:"5%",
+  },
+  titulo:{
+   textAlign:"center",
+    marginTop:"-3%"
+  },
+  
 
+}
 
 const deleteUserButton = (userid) => {
-    axios.delete(`http://localhost:3000/api/users/${userid}`)
+  axios.delete(`http://localhost:3000/api/users/${userid}`)
     .then((resp) => {
       alert('usuario eliminado');
       console.log(resp);
@@ -20,14 +42,14 @@ const deleteUserButton = (userid) => {
 }
 const verPostsButton = (userid) => {
   axios.get(`http://localhost:3000/api/users/${userid}`)
-  .then((resp) => {
-    alert('posteos cargados');
-    console.log(resp);
-  })
-  .catch((error) => {
-    alert('No se pudieron cargar posteos del usuario');
-    console.log(error);
-  })
+    .then((resp) => {
+      alert('posteos cargados');
+      console.log(resp);
+    })
+    .catch((error) => {
+      alert('No se pudieron cargar posteos del usuario');
+      console.log(error);
+    })
 }
 
 function UserTable() {
@@ -42,23 +64,29 @@ function UserTable() {
   } else {
     return (
       <>
-      
-      <Link to={`/newpost`} className='btn btn-info'>Agregar usuario</Link>
-        <h1>Usuarios</h1>
+        <div style={estilos.total}>
+       
+         <div>
+         <Link to={`/newuser`} className='btn btn-info'>
+          <Button label="Agregar usuario"/>
+          </Link>
+          <h1 style={estilos.titulo}>Usuarios</h1>
+         </div>
+        
 
+          <div style={estilos.tabla}>
+            <DataTable value={users}
+              dataKey='id'
+              className='datatable-responsive'
+              scrollable scrollHeight="50px" style={{ minWidth: '50rem'}}>
 
-        <DataTable value={users}
-          dataKey='id'
-          className='datatable-responsive'
-          scrollable scrollHeight="50px" style={{ minWidth: '50rem' }}>
+              <Column field="username" sortable header="Username" rowEditor headerStyle={{ width: '10%', minWidth: '8rem' }}></Column>
+              <Column field="email" header="Email"></Column>
+              <Column field="password" header="Password"></Column>
+            </DataTable>
+          </div>     
+            </div>
 
-          <Column field="username" sortable header="Username"></Column>
-          <Column field="email" header="Email"></Column>
-  
-          <Column rowEditor headerStyle={{ width: '10%', minWidth: '8rem' }} bodyStyle={{ textAlign: 'center' }}></Column>
-          
-
-        </DataTable>
       </>
     )
   }

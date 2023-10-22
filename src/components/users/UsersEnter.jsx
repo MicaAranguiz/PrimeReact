@@ -32,54 +32,62 @@ export const UserEnter = (props) => {
       textAlign: "center",
       color: "black",
       backgroundColor: "#888BE3"
-  
     },
-    formulario:{
+    formulario: {
       margin: "50px",
       padding: "15px",
     },
-    boton:{
-      margin:"20px",
+    boton: {
+      margin: "20px",
     },
-    inputs:{
-      margin:"10px"
+    inputs: {
+      margin: "10px"
+    },
+    enviar: {
+      margin: "10px"
     }
   }
 
   return (
     <>
-    <div style={estilos.centrar}>
+      <div style={estilos.centrar}>
 
-      <h1>Nuevo Usuario</h1>
+        <h1>Nuevo Usuario</h1>
 
-      <form action="" onSubmit={handleSubmit} style={estilos.formulario}>
-        <div className="card flex flex-column md:flex-row gap-3">
+        <form action="" onSubmit={handleSubmit} style={estilos.formulario}>
+          <div className="card flex flex-column md:flex-row gap-3">
 
-          <div className="p-inputgroup flex-1" style={estilos.inputs}>
-            <span className="p-inputgroup-addon">
-              <i className="pi pi-user"></i>
-            </span>
-            <InputText placeholder="Username" type="text" value={username} onChange={event => setUsername(event.target.value)}  />
-          </div>
+            <div className="p-inputgroup flex-1" style={estilos.inputs}>
+              <span className="p-inputgroup-addon">
+                <i className="pi pi-user"></i>
+              </span>
+              <InputText placeholder="Username" type="text" value={username} onChange={event => setUsername(event.target.value)} />
+            </div>
 
-          <div className="p-inputgroup flex-1" style={estilos.inputs}>
-            <span className="p-inputgroup-addon">
-              <i className="pi pi-envelope"></i>
-            </span>
-            <InputText placeholder="Email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
-          </div>
-          <div className="p-inputgroup flex-1" style={estilos.inputs}>
-            <span className="p-inputgroup-addon">
-              <i className="pi pi-lock"></i>
-            </span>
-            <InputText placeholder="Password" type="password" value={password} onChange={event => setPassword(event.target.value)} />
-          </div>
+            <div className="p-inputgroup flex-1" style={estilos.inputs}>
+              <span className="p-inputgroup-addon">
+                <i className="pi pi-envelope"></i>
+              </span>
+              <InputText placeholder="Email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+            </div>
+            <div className="p-inputgroup flex-1" style={estilos.inputs}>
+              <span className="p-inputgroup-addon">
+                <i className="pi pi-lock"></i>
+              </span>
+              <InputText placeholder="Password" type="password" value={password} onChange={event => setPassword(event.target.value)} />
+            </div>
 
-          <Button type='submit' variant="contained" style={estilos.boton}>Agregar</Button>
+
+          </div> <div>
+          <Button type='submit' label="Enviar" variant="contained" style={estilos.enviar} />
+          <Link to={`/users`} className='btn btn-info' style={estilos.enviar}>
+            <Button label="Ver usuarios" />
+          </Link>
         </div>
-      </form>
-    </div>
-     
+        </form>
+       
+      </div>
+
     </>
   );
 }

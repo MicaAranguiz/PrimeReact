@@ -48,6 +48,9 @@ export const PostEnter = (props) => {
     },
     inputs: {
       margin: "5px"
+    },
+    enviar:{
+      margin:"10px"
     }
   }
 
@@ -95,10 +98,15 @@ export const PostEnter = (props) => {
               </span>
               <InputText placeholder="User ID" type="number" value={userId} onChange={event => setUserId(event.target.value)} />
             </div>
-
-            <Button type='submit' variant="contained">Subir</Button>
+          </div>
+          <div>
+        <Button type='submit' label="Enviar" variant="contained" style={estilos.enviar}/>
+            <Link to={`/posts`} className='btn btn-info' style={estilos.enviar}>
+              <Button label="Ver publicaciones " />
+            </Link>
           </div>
         </form>
+        
       </div>
     </>
 

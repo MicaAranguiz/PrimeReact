@@ -10,11 +10,10 @@ const estilos = {
                 marginBottom:"-20px",
                 padding: "15px",
                 fontFamily: "-apple-system",
-                fontSize: "30px",
+                fontSize: "40px",
                 textAlign: "center",
                 color: "black",
                 backgroundColor: "#888BE3"
-            
         },
 }
 
