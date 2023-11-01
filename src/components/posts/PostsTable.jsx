@@ -3,7 +3,6 @@ import { usePosts } from '../../hooks/usePosts';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Link } from 'react-router-dom';
-import { Button } from 'primereact/button';
 
 
 const estilos = {
@@ -19,7 +18,7 @@ const estilos = {
   },
   tabla: {
     textAlign: "center",
-    marginLeft: "5%"
+    marginLeft: "5%",
   },
   titulo: {
     textAlign: "center",
@@ -28,6 +27,7 @@ const estilos = {
 }
 
 function PostTable() {
+ 
 
   const lista = usePosts();
   console.log(lista);
@@ -40,14 +40,15 @@ function PostTable() {
   } else {
     return (
       <>
+ 
         <div style={estilos.total}>
 
-          <div>
+
             <Link to={`/newpost`} className='btn btn-info'>
               <Button label="Agregar posteo" />
             </Link>
             <h1 style={estilos.titulo}>Publicaciones</h1>
-          </div>
+
           <div style={estilos.tabla}>
             <DataTable value={posts}
               dataKey='id'
@@ -62,6 +63,8 @@ function PostTable() {
             </DataTable>
           </div>
           </div>
+
+        
       </>
     )
   }

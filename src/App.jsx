@@ -17,7 +17,7 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 //estilos primereact
 import 'primeicons/primeicons.css';
 import "primereact/resources/themes/lara-light-indigo/theme.css";
-import { Splitter, SplitterPanel } from 'primereact/splitter';
+
 
 
 const estilos = {
@@ -42,6 +42,7 @@ const estilos = {
 function App() {
   return (
     <>
+     
       <div style={estilos.centrar}>
 
         <Splitter style={estilos.tabla}>
@@ -69,6 +70,18 @@ function App() {
         </Routes>
       </BrowserRouter>
 
+      
+      <div style={estilos.centrar}>
+
+        <Splitter style={estilos.tabla}>
+          <SplitterPanel className="flex align-items-center justify-content-center">
+            <a href='/users' >Ver Usuarios</a><br />
+            <a href='/posts' >Ver Publicaciones</a><br /></SplitterPanel>
+          
+        </Splitter>
+
+
+      </div>
     </>
   )
 }
