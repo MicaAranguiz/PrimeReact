@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-rou
 //estilos primereact
 import 'primeicons/primeicons.css';
 import "primereact/resources/themes/lara-light-indigo/theme.css";
+import { Splitter, SplitterPanel } from 'primereact/splitter';
 
 
 
@@ -36,15 +37,22 @@ const estilos = {
     marginTop: "10px",
     padding: "20px",
     height: "100px"
+  },
+  panel:{
+    width:"10%",
+    height:"1000px",
+    float:"left",
+    borderRadius: "10px",
+    backgroundColor: "red",
   }
+
 }
 
 function App() {
+ 
   return (
     <>
-     
       <div style={estilos.centrar}>
-
         <Splitter style={estilos.tabla}>
           <SplitterPanel className="flex align-items-center justify-content-center">
             <a href='/users' >Ver Usuarios</a><br />
@@ -53,11 +61,9 @@ function App() {
             <a href='/newuser' >Nuevo Usuario</a><br />
             <a href='/newpost' >Nueva Publicacion</a><br /></SplitterPanel>
         </Splitter>
-
-
       </div>
 
-      <BrowserRouter>
+     <BrowserRouter>
         <Routes>
           <Route path='/newpost' Component={PostsEnterView} >
           </Route>
@@ -69,18 +75,12 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-
-      
       <div style={estilos.centrar}>
-
         <Splitter style={estilos.tabla}>
           <SplitterPanel className="flex align-items-center justify-content-center">
             <a href='/users' >Ver Usuarios</a><br />
             <a href='/posts' >Ver Publicaciones</a><br /></SplitterPanel>
-          
         </Splitter>
-
-
       </div>
     </>
   )

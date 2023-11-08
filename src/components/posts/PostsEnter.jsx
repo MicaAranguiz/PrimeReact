@@ -36,8 +36,8 @@ export const PostEnter = (props) => {
       fontSize: "20px",
       textAlign: "center",
       color: "black",
-      backgroundColor: "#888BE3"
-
+      backgroundColor: "#888BE3",
+      height:"600px"
     },
     formulario: {
       margin: "20px",

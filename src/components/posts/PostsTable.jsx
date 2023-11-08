@@ -3,6 +3,7 @@ import { usePosts } from '../../hooks/usePosts';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Link } from 'react-router-dom';
+import { Button } from 'primereact/button';
 
 
 const estilos = {
