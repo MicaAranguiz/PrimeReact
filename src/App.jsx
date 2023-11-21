@@ -53,32 +53,26 @@ function App() {
   return (
     <>
       <div style={estilos.centrar}>
-        <Splitter style={estilos.tabla}>
-          <SplitterPanel className="flex align-items-center justify-content-center">
-            <a href='/users' >Ver Usuarios</a><br />
-            <a href='/posts' >Ver Publicaciones</a><br /></SplitterPanel>
-          <SplitterPanel className="flex align-items-center justify-content-center">
-            <a href='/newuser' >Nuevo Usuario</a><br />
-            <a href='/newpost' >Nueva Publicacion</a><br /></SplitterPanel>
-        </Splitter>
+        
       </div>
 
      <BrowserRouter>
         <Routes>
+          
           <Route path='/newpost' Component={PostsEnterView} >
           </Route>
           <Route path='/posts' Component={PostsTableView} >
           </Route>
           <Route path='/newuser' Component={UsersEnterView} >
           </Route>
-          <Route path='/users' Component={UsersTableView} >
+          <Route path='/' Component={UsersTableView} >
           </Route>
         </Routes>
       </BrowserRouter>
       <div style={estilos.centrar}>
         <Splitter style={estilos.tabla}>
           <SplitterPanel className="flex align-items-center justify-content-center">
-            <a href='/users' >Ver Usuarios</a><br />
+            <a href='/' >Ver Usuarios</a><br />
             <a href='/posts' >Ver Publicaciones</a><br /></SplitterPanel>
         </Splitter>
       </div>

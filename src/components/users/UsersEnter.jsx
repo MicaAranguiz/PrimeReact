@@ -81,7 +81,7 @@ export const UserEnter = (props) => {
 
           </div> <div>
           <Button type='submit' label="Enviar" variant="contained" style={estilos.enviar} />
-          <Link to={`/users`} className='btn btn-info' style={estilos.enviar}>
+          <Link to={`/`} className='btn btn-info' style={estilos.enviar}>
             <Button label="Ver usuarios" />
           </Link>
         </div>
